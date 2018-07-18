@@ -1,0 +1,46 @@
+.DeviceMonitor {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  
+  @media(max-width: 1000px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media(max-width: 650px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.DeviceMonitor__Device {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  padding: 25px 15px;
+  color: #fff;
+  border-radius: 4px;
+
+  &--online {
+    background: $color-success;
+  }
+
+  &--offline {
+    background: $color-danger;
+  }
+
+  &__icon {
+    font-size: 2.5rem;
+    margin: 0 auto 15px auto;
+    line-height: 50px;
+  }
+
+  &__name {
+    padding: 10px 0 5px 0;
+  }
+
+  &__ip {
+    opacity: .8;
+    font-size: 1.3rem;
+  }
+}

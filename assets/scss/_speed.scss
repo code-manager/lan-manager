@@ -1,0 +1,43 @@
+.Speed {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 15px;
+  text-align: center;
+  min-height: 100%;
+
+  &__download, &__upload {
+    background: #fdcb6e;
+    color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (min-width: 600px) and (max-width: 800px) {
+      width: 200px;
+      height: 180px;
+    }
+  }
+
+  @media (min-width: 600px) and (max-width: 800px) {
+    &__upload {
+      justify-self: end;
+    }
+  
+    &__download {
+      justify-self: start;
+    }
+  }
+
+  &__speed {
+    font-size: 3rem;
+  }
+
+  &__unit {
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 2.2rem;
+  }
+}

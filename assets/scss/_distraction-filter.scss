@@ -1,0 +1,30 @@
+.DistractionFilter {
+  display: grid;
+  grid-row-gap: 15px;
+}
+
+.DistractionFilter__Device {
+  border: 1px solid rgba(white, .1);
+  border-radius: 4px;
+  display: flex;
+  padding: 15px;
+  cursor: pointer;
+
+  &--enabled &__icon {
+    color: $color-success;
+  }
+
+  &--disabled &__icon {
+    color: $color-danger;
+  }
+
+  &__icon {
+    font-size: 2rem;
+    margin-right: 15px;
+  }
+
+  &__name {
+    border-left: 1px solid rgba(white, .1);
+    padding-left: 15px;
+  }
+}

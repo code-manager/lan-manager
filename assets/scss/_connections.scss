@@ -1,0 +1,120 @@
+.Connections {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 15px;
+  min-height: 100%;
+}
+
+.Connection {
+  padding: 15px;
+  border-radius: 4px;
+  border: 1px solid rgba(white, .6);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+
+  @media (min-width: 600px) and (max-width: 800px) {
+    width: 200px;
+    height: 180px;
+    justify-self: start;
+    &:first-child {
+      justify-self: end;
+    }
+  }
+
+  &--disabled {
+    opacity: .6;
+  }
+
+  &--running {
+    border-color: $color-success;
+  }
+
+  &--not-running:not(&--disabled) {
+    border-color: $color-danger;
+    background: $color-danger;
+  }
+
+  &--active {
+    background: $color-success;
+    color: white;
+  }
+
+  &__preferred-icon {
+    display: none;
+
+    i {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      line-height: 30px;
+      z-index: 2;
+      color: #fff;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -35px;
+      left: -35px;
+      width: 70px;
+      height: 70px;
+      border: 1px solid rgba(white, .6);
+      display: block;
+      transform: rotate(45deg);
+      z-index: 1;
+    }
+  }
+
+  &:hover {
+    color: white;
+    opacity: 1;
+  }
+
+  &--hover {
+    border-color: $color-success;
+    background: $color-success;
+  }
+
+  &--hover &__preferred-icon {
+    display: block;
+  }
+
+  &--preferred &__preferred-icon {
+    display: block;
+  }
+
+  &__label {
+    font-size: 2.2rem;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  &__actions {
+    padding-top: 15px;
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  &__action {
+    background: transparent;
+    border: 1px solid rgba(white, .8);
+    font-size: 1.5rem;
+
+    &:hover {
+      background: white;
+      color: #22262E;
+    }
+    
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+}

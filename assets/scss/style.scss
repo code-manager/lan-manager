@@ -1,0 +1,49 @@
+@import "../icomoon/style.css";
+@import "variables";
+@import "base";
+@import "device-monitor";
+@import "vpn";
+@import "distraction-filter";
+@import "speed";
+@import "connections";
+
+.main-view {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 15px;
+
+  &__section {
+    display: grid;
+    grid-template-rows: auto 1fr;
+  }
+  
+  &__title {
+    font-weight: normal;
+    text-align: center;
+    margin: 0;
+    padding: 25px;
+  }
+
+  &__group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 15px;
+    @media (max-width: 500px) {
+      grid-template-columns: auto;
+    }
+  }
+
+  &__group--connections-speed &__section {
+    grid-template-columns: auto;
+    min-height: 250px;
+  }
+
+  @media (max-width: 800px) {
+    &__group--connections-speed {
+      grid-template-columns: auto;    
+    }
+  }
+}
